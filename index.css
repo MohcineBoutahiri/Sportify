@@ -1,0 +1,279 @@
+
+:root {
+    --gradient-start: #1a6355;
+    --gradient-end: #4CAF50;
+    --text-color: #ffffff;
+    --button-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(to right, #207d86, #408d1e);
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+/* Conteneur principal */
+.container1 {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    padding: 1rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.logo-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Contenu principal */
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.content-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.left-content {
+    flex: 1;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Ajustement des textes */
+.left-content div {
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
+}
+.F{
+    margin-left: 2rem;
+}
+.FO{
+    margin-left: 10rem;
+
+}
+.FI{
+    margin-left: 14Rem;
+
+}
+.Y{
+    margin-left: 5rem;
+
+}
+/* Sous-titre */
+.subtitle {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Section droite */
+.right-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3rem;
+}
+
+.brand-logo img {
+    width: 60%;
+    height: auto;
+    margin-left: 20rem;
+}
+
+.cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--button-color);
+    color: var(--gradient-start);
+    text-decoration: none;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-weight: 700;
+    text-align: center;
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-right: 2rem;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* Responsivité */
+@media (max-width: 1200px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .left-content div {
+        font-size: 4rem;
+    }
+
+    .right-content {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-content div {
+        font-size: 3rem;
+    }
+
+    .brand-logo img {
+        max-width: 300px;
+    }
+
+    .cta-button {
+        margin-right: 0;
+    }
+}
+
+/* styles.css */
+
+.background img {
+    position: absolute; 
+    top: 130%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 70%;
+    opacity:9%;
+    margin-top: 15%;
+    box-shadow: 0 30px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+.container {
+    position: relative;
+    z-index: 1; /* Ensure the content is above the background */
+  }
+  
+.content {
+    text-align: center;
+    margin-top: 70px;
+  }
+h1 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: white;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    cursor: pointer; /* Show pointer on hover */
+  }
+  
+  h1:hover {
+    color: #66bb6a; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge the text */
+  }
+  
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 86px;
+    margin-top: 19%;
+    margin-right: 1%;
+  }
+  
+  .action-button {
+    background: none; /* Remove the button background */
+    border: none; /* Remove the border */
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .action-button:hover {
+    color: #66bb6a;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
+  
+  .action-button img {
+    width: 80px;
+    height: 80px;
+    opacity: 50%;
+  }
+  
+  .action-button p {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: white; /* Keep the text color white */
+  }
+  p:hover{
+    color: #66bb6a;
+  }
+  .footer {
+    margin-top:  100px;
+    text-align: center;
+    color: white;
+  }
+  
+  .footer p {
+    font-size: 1.2rem;
+    margin-bottom: 20px; /* Space below the text */
+  }
+  
+  .social-icons {
+    display: flex;
+    margin-left: 84%;
+    gap: 20px;
+    opacity: 10%;
+  }
+  .social-icons a {
+    text-decoration: none; /* Remove underline on links */
+  }
+  
+  .social-icons img {
+    width: 33px;
+    height: 27px;
+    transition: transform 0.3s ease;
+   
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+  }

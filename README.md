@@ -1,2 +1,2 @@
 # Sportify
-Mohcine Boutahiri, Farah El makhfi, Omar Megzari abcd
+Mohcine Boutahiri, Farah El makhfi, Omar Megzari 

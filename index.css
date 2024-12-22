@@ -1,52 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-:root {
-    --gradient-start: #1a6355;
-    --gradient-end: #4CAF50;
-    --text-color: #ffffff;
-    --button-color: rgba(255, 255, 255, 0.9);
-}
-
-
-/* Réinitialisation de base */
-* {
+*{  
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place the video behind other content */
+    opacity: 0.7; /* Optional: Adjust the transparency */
 }
 
-body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(to right, #207d86, #408d1e);
-    min-height: 100vh;
-    color: var(--text-color);
+body{
+    background: url("./asset/BackGround-Connexion.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    background: linear-gradient(to right,rgb(98, 109, 57), #4e6425);
+    filter: blur();
+
 }
 
-/* Conteneur principal */
-.container1 {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 2rem;
-    min-height: 100vh;
+.wrapper{
     display: flex;
-    flex-direction: column;
-}
-
-/* Header */
-.header {
-    padding: 1rem 0;
-}
-
-.logo {
-    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 1.5rem;
+    min-height: 110vh;
+    background: rgba(39, 39, 39, 0.4);
+    
+}
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+    z-index: 100;
+}
+.nav-logo{
+    display: flex;
+}
+.nav-logo p{
+    color: white;
+    font-size: 25px;
     font-weight: 600;
 }
-
-.logo-icon {
+.nav-logo img{
     width: 2rem;
     height: 2rem;
+    margin-top: 34PX;
+    margin-right: 5px;
+}
+.nav-menu ul{
+    display: flex;
+}
+.nav-menu ul li{
+    list-style-type: none;
+}
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+.link:hover, .active{
+    border-bottom: 2px solid #fff;
+}
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+#registerBtn{
+    margin-left: 15px;
+}
+.btn.white-btn{
+    background: rgba(255, 255, 255, 0.7);
+}
+.btn.btn.white-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+.nav-menu-btn{
+    display: none;
 }
 
 /* Contenu principal */
@@ -82,6 +136,7 @@ body {
     text-transform: uppercase;
     letter-spacing: -2px;
     margin-bottom: 1rem;
+    color: white;
 }
 .F{
     margin-left: 2rem;
@@ -106,6 +161,7 @@ body {
     opacity: 0.9;
     animation: zoom 2s infinite;
     margin-left: 20%;
+    color: white;
 }
 @keyframes zoom {
   0% {
@@ -145,13 +201,12 @@ body {
       transform: scale(1); /* Back to normal size */
   }
 }
-
 .cta-button {
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--button-color);
-    color: var(--gradient-start);
+    color: white;
     text-decoration: none;
     width: 150px;
     height: 150px;
@@ -168,7 +223,6 @@ body {
 .cta-button:hover {
     transform: scale(1.05);
 }
-
 /* Responsivité */
 @media (max-width: 1200px) {
     .main-content {
@@ -200,106 +254,3 @@ body {
         margin-right: 0;
     }
 }
-
-/* styles.css */
-
-.background img {
-    position: absolute; 
-    top: 130%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    width: 70%;
-    opacity:9%;
-    margin-top: 15%;
-    box-shadow: 0 30px 20px rgba(0, 0, 0, 0.5);
-  }
-  
-.container {
-    position: relative;
-    z-index: 1; /* Ensure the content is above the background */
-  }
-  
-.content {
-    text-align: center;
-    margin-top: 70px;
-  }
-h1 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: white;
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
-    cursor: pointer; /* Show pointer on hover */
-  }
-  
-  h1:hover {
-    color: #66bb6a; /* Change color on hover */
-    transform: scale(1.1); /* Slightly enlarge the text */
-  }
-  
-  
-  .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 86px;
-    margin-top: 19%;
-    margin-right: 1%;
-  }
-  
-  .action-button {
-    background: none; /* Remove the button background */
-    border: none; /* Remove the border */
-    cursor: pointer;
-    text-align: center;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .action-button:hover {
-    color: #66bb6a;
-    transform: scale(1.1); /* Slight zoom effect on hover */
-  }
-  
-  .action-button img {
-    width: 80px;
-    height: 80px;
-    opacity: 50%;
-  }
-  
-  .action-button p {
-    font-size: 1rem;
-    margin-top: 10px;
-    color: white; /* Keep the text color white */
-  }
-  p:hover{
-    color: #66bb6a;
-  }
-  .footer {
-    margin-top:  100px;
-    text-align: center;
-    color: white;
-  }
-  
-  .footer p {
-    font-size: 1.2rem;
-    margin-bottom: 20px; /* Space below the text */
-  }
-  
-  .social-icons {
-    display: flex;
-    margin-left: 84%;
-    gap: 20px;
-    opacity: 10%;
-  }
-  .social-icons a {
-    text-decoration: none; /* Remove underline on links */
-  }
-  
-  .social-icons img {
-    width: 33px;
-    height: 27px;
-    transition: transform 0.3s ease;
-   
-  }
-  
-  .social-icons img:hover {
-    transform: scale(1.2); /* Slight zoom on hover */
-  }

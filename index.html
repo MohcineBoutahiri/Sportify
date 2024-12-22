@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sportify - Find Your Football Field</title>
-    <link rel="stylesheet" href="./index.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="index.css">
+    <title>Sportify</title>
 </head>
-<section>
 <body>
-    <div class="container1">
-        <header class="header">
-            <div class="logo">
-                <img src="./asset/koora.png" alt="Sportify" class="logo-icon" />
-                <span>Sportify</span>
+    <!-- Background Video -->
+    <video class="background-video" autoplay loop muted playsinline>
+        <source src="./asset/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <img src="./asset/koora.png" alt="">
+                <p>Sportify</p>
             </div>
-           
-        </header>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="./index.html" class="link active">Home</a></li>
+                    <li><a href="#" class="link">Connexion</a></li>
+                    <li><a href="#" class="link">Terrains</a></li>
+                    <li><a href="#" class="link">About Us</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <a href="../connexion/connexion.html"><button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button></a>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+        
         <main class="main-content">
             <div class="content-wrapper">
                 <div class="left-content">
-                   <div class="F">
-                    <H3>FIND</H3>
-                   </div>
-                   <DIv class=" Y">
-                    <H3>YOUR</H3>
-                   </DIv>
-                   <DIv class="FO">
-                    <H3>FOOTBALL</H3>
-                   </DIv>
-                   <DIV class="FI">
-                    <H3>FIELD</H3>
-                   </DIV>
+                    <div class="F"><h3>FIND</h3></div>
+                    <div class="Y"><h3>YOUR</h3></div>
+                    <div class="FO"><h3>FOOTBALL</h3></div>
+                    <div class="FI"><h3>FIELD</h3></div>
                     <p class="subtitle">
                         Visit our site and discover the field<br>
                         in Morocco that fits your needs.
@@ -41,48 +54,10 @@
                     <div class="brand-logo">
                         <img src="./asset/logo.png" alt="Sportify Logo" />
                     </div>
-                    <a href="#" class="cta-button">
-                        EXPLORE<br>HERE
-                    </a>
+                    <a href="./aboutus/aboutus.html" class="cta-button">EXPLORE<br>HERE</a>
                 </div>
             </div>
         </main>
     </div>
 </body>
-</section>
-<section>
-    <body>
-        <div class="background">
-          <img src="./asset/terrain de foot.jpeg" alt="Football Field Background">
-        </div>
-        <div class="container">
-          <div class="content">
-            <h1>Personnalisez votre expérience !</h1>
-            <div class="buttons">
-              <button class="action-button">
-               <a href="./connexion/connexion.html"> <img src="./asset/connexion.png" alt="Connexion"> </a>
-                <p>Connexion</p>
-              </button>
-              <button class="action-button">
-                <a href="./terrain/inex.html"><img src="./asset/terrain.png" alt="Terrains"></a>
-                <p>Terrains</p>
-              </button>
-              <button class="action-button">
-                <a href="./reglage/index.html"><img src="./asset/regglages.png" alt="Réglages"> </a>
-                <p>Réglages</p>
-              </button>
-            </div>
-          </div>
-          <div class="footer">
-            <p>Choisissez un terrain</p>
-            <div class="social-icons">
-              <a href="#"><img src="./asset/email.png" alt="Email"></a>
-              <a href="#"><img src="./asset/instagram.png" alt="Instagram"></a>
-              <a href="#"><img src="./asset/wtsp.png" alt="wtsp"></a>
-      
-            </div>
-          </div>
-        </div>
-    <body>
-</section>
 </html>

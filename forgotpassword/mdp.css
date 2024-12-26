@@ -1,0 +1,82 @@
+/* POPPINS FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right,rgb(98, 109, 57), #4e6425);
+    filter: blur();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    background-color: rgba(12, 2, 2, 0.096);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.forgot-password-container header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 37px;
+    background-color: whitesmoke;
+}
+
+.submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #12812e;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: #3cc45a;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour l'image */
+
+
+.photo-container {
+    position: fixed; /* Fixe l'image à la fenêtre */
+    top: 185px;
+  right: -10rem;
+}
+.photo {
+    width: 50%; /* Ajuste la taille de l'image */
+    height: auto;
+}

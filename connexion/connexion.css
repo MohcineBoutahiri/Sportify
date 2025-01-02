@@ -189,7 +189,7 @@ header{
 }
 .two label a{
     text-decoration: none;
-    color: #fff;
+    color: white ;
 }
 .two label a:hover{
     text-decoration: underline;

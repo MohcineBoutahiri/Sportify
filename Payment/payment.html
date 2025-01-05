@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement - Résumé de Commande</title>
+    <link rel="stylesheet" href="./payment.css">
+</head>
+<body>
+    <div class="payment-container">
+        <!-- Order Summary -->
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="item">
+                <div class="item-center">
+                    <h3 id="field-name">Maracana</h3>
+                    <p id="field-location">Location: Route de Sefrou, km 8.5, 30023 Fès</p>
+                </div>
+                <div class="item-right">
+                    <span id="field-price">300 MAD</span>
+                </div>
+            </div>
+
+            <!-- Additional items, you can leave them as placeholders -->
+
+
+            <div class="summary-totals">
+                <div class="summary-line">
+                    <span>TVA 2.5% included</span>
+                    <span></span>
+                </div>
+                <div class="summary-line total">
+                    <span>TOTAL</span>
+                    <span id="total-price">300 MAD</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Form -->
+        <div class="payment-card">
+            <h1>Finalize your Payment</h1>
+            <form action="/payment-processing" method="POST">
+                <label for="name">Cardholder Name</label>
+                <input type="text" id="name" placeholder="Titulaire de la carte" required aria-label="Nom du titulaire" />
+
+                <label for="card">Card Number</label>
+                <input type="text" id="card" placeholder="1234 5678 9012 3456" required pattern="\d{16}" maxlength="16" inputmode="numeric" aria-label="Numéro de carte" />
+
+                <div class="card-details">
+                    <div>
+                        <label for="expiry">Expiration Date</label>
+                        <input type="text" id="expiry" placeholder="MM/YYYY" maxlength="7" required pattern="^(0[1-9]|1[0-2])\/\d{4}$" inputmode="numeric" aria-label="Date d'expiration" />
+                    </div>
+                    <div>
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="123" required pattern="\d{3}" maxlength="3" inputmode="numeric" aria-label="Code de sécurité CVV" />
+                    </div>
+                </div>
+
+                <button type="submit">Confirm Payment</button>
+            </form>
+            <img src="./asset/logopayment.png" alt="Logo Visa et Mastercard" />
+        </div>
+    </div>
+
+    <script>
+        // Retrieve booking details from localStorage
+        document.addEventListener("DOMContentLoaded", function() {
+            const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
+
+            if (bookingDetails) {
+                // Populate the order summary with the selected field details
+                document.getElementById('field-name').textContent = bookingDetails.field;
+                document.getElementById('field-location').textContent = `Location: ${bookingDetails.location}`;
+                document.getElementById('field-price').textContent = bookingDetails.price;
+                document.getElementById('total-price').textContent = bookingDetails.price;  // Assuming total is the same as field price
+            } else {
+                // Handle case where booking details are not found
+                console.log("No booking details found.");
+            }
+        });
+    </script>
+</body>
+</html>

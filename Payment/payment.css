@@ -1,0 +1,210 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #2C3E50; /* Darker background for better contrast */
+}
+
+.payment-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    height: 100vh;
+    padding: 20px;
+    background: url('https://source.unsplash.com/1600x900/?soccer') no-repeat center center/cover;
+    backdrop-filter: blur(5px); /* Optional blur effect for background */
+    box-sizing: border-box;
+}
+
+/* Order Summary Styles */
+.order-summary {
+    background: rgba(44, 62, 80, 0.9); /* Same dark gray with transparency as payment card */
+    color: #ECF0F1; /* Light gray text for readability */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 400px;
+}
+
+.order-summary h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #F39C12; /* Gold for headings */
+    text-align: center;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.item-left img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.item-center {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.item-center h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #F39C12;
+}
+
+.item-center p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #BDC3C7;
+}
+
+.item-right {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ECF0F1;
+}
+
+/* Summary Totals */
+.summary-totals {
+    margin-top: 20px;
+    border-top: 1px solid #BDC3C7;
+    padding-top: 10px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.summary-line.total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #F39C12; /* Gold for the total */
+}
+
+/* Payment Form Styles */
+.payment-card {
+    background: rgba(44, 62, 80, 0.9); /* Dark gray with some transparency */
+    color: #ECF0F1; /* Light gray text for readability */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.payment-card h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #F39C12; /* Warm gold/yellow for headings */
+}
+
+label {
+    display: flex;
+    margin: 12px 0 5px;
+    font-size: 16px;
+    color: #F39C12; /* Gold color for labels */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #BDC3C7; /* Light gray border */
+    border-radius: 5px;
+    background: #34495E; /* Darker background for input */
+    color: #ECF0F1; /* Light gray text */
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #F39C12; /* Gold border on focus */
+    outline: none;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-details div {
+    width: 48%;
+}
+
+button {
+    width: 105%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #F39C12; /* Bright gold button */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #E67E22; /* Darker gold/orange on hover */
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.payment-card img {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    height: auto;
+    opacity: 0.8; /* Slightly transparent */
+}
+
+.payment-card img:hover {
+    opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .payment-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .order-summary, .payment-card {
+        width: 100%;
+    }
+
+    .order-summary h2, .payment-card h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+
+
+
+

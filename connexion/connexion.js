@@ -52,5 +52,5 @@ function validateLogin(event) {
 
         
         alert('Connexion réussie!');
-        window.location.href = '#'; 
+        window.location.href = '../terrains/terrain.html'; 
     }

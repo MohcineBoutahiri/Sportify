@@ -1,0 +1,227 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, darkgreen, #4e6425);
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, darkgreen, #4e6425);
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.nav {
+    text-align: center;
+    font-size: 24px;
+}
+
+h1, h2, h3 {
+    color: orange;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Fields Section */
+.fields {
+    flex: 1 1 60%;
+    background: lightgrey;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+}
+
+.fields h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#field-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#field-list li {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.field-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.field-image img {
+    width: 13rem;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Fields */
+#field-list li:hover {
+    background: #e8f5e9;
+}
+
+/* Calendar Section */
+.calendar {
+    flex: 1 1 30%;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+.calendar.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.calendar header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.current-date {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.icons span {
+    font-size: 20px;
+    cursor: pointer;
+    color: #699129;
+    transition: color 0.3s ease;
+}
+
+.icons span:hover {
+    color: #4e6425;
+}
+
+/* Calendar Grid */
+.weekdays, .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.weekdays li {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.days li {
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.days li:hover {
+    background: #699129;
+    color: white;
+}
+
+.days li.active {
+    background: #699129;
+    color: white;
+}
+
+.days li.past {
+    background-color: #f0f0f0;
+    color: red;
+    text-decoration: line-through;
+}
+
+.days li.inactive {
+    color: #b0b0b0;
+}
+
+/* Time Selection */
+.time-selection {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#time {
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+}
+
+#time-display {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Go to Payment Button */
+#payment-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#go-to-payment {
+    padding: 10px 20px;
+    background-color: #4e6425;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 16px;
+}
+
+#go-to-payment:hover {
+    background-color: #699129;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fields, .calendar {
+        flex: 1 1 100%;
+    }
+    .field-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .field-image img {
+        margin-top: 10px;
+    }
+}

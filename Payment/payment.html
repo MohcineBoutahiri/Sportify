@@ -15,6 +15,8 @@
                 <div class="item-center">
                     <h3 id="field-name">Maracana</h3>
                     <p id="field-location">Location: Route de Sefrou, km 8.5, 30023 Fès</p>
+                    <p id="selected-date">Date: Not Selected</p>
+                    <p id="selected-time">Time: Not Selected</p>
                 </div>
                 <div class="item-right">
                     <span id="field-price">300 MAD</span>
@@ -22,7 +24,6 @@
             </div>
 
             <!-- Additional items, you can leave them as placeholders -->
-
 
             <div class="summary-totals">
                 <div class="summary-line">
@@ -74,6 +75,10 @@
                 document.getElementById('field-location').textContent = `Location: ${bookingDetails.location}`;
                 document.getElementById('field-price').textContent = bookingDetails.price;
                 document.getElementById('total-price').textContent = bookingDetails.price;  // Assuming total is the same as field price
+
+                // Populate the date and time
+                document.getElementById('selected-date').textContent = `Date: ${bookingDetails.date}`;
+                document.getElementById('selected-time').textContent = `Time: ${bookingDetails.time}`;
             } else {
                 // Handle case where booking details are not found
                 console.log("No booking details found.");

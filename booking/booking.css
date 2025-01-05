@@ -198,6 +198,7 @@ h1, h2, h3 {
 }
 
 #go-to-payment {
+    display: none;
     padding: 10px 20px;
     background-color: #4e6425;
     color: white;
@@ -223,5 +224,8 @@ h1, h2, h3 {
     }
     .field-image img {
         margin-top: 10px;
+    }
+    img{
+        width: 50%;
     }
 }

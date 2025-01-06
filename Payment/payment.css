@@ -179,6 +179,7 @@ button:active {
 }
 
 /* Responsive Styles */
+/* Responsive Styles */
 @media (max-width: 600px) {
     .payment-container {
         flex-direction: column;
@@ -202,7 +203,14 @@ button:active {
     button {
         font-size: 14px;
     }
+
+    .payment-card img {
+        position: static;  /* Remettre en position normale */
+        display: block;    /* S'assurer qu'elle s'affiche */
+        margin: 20px auto; /* Centre l'image horizontalement */
+    }
 }
+
 
 
 

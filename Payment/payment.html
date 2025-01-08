@@ -7,23 +7,21 @@
     <link rel="stylesheet" href="./payment.css">
 </head>
 <body>
-    <div class="payment-container">
-        <!-- Order Summary -->
+    <div class="mere">
+
         <div class="order-summary">
             <h2>Order Summary</h2>
             <div class="item">
                 <div class="item-center">
-                    <h3 id="field-name">Maracana</h3>
-                    <p id="field-location">Location: Route de Sefrou, km 8.5, 30023 Fès</p>
-                    <p id="selected-date">Date: Not Selected</p>
-                    <p id="selected-time">Time: Not Selected</p>
+                    <h3 id="field-name"></h3>
+                    <p id="field-location"></p>
+                    <p id="selected-date"></p>
+                    <p id="selected-time"></p>
                 </div>
                 <div class="item-right">
                     <span id="field-price">300 MAD</span>
                 </div>
             </div>
-
-            <!-- Additional items, you can leave them as placeholders -->
 
             <div class="summary-totals">
                 <div class="summary-line">
@@ -37,12 +35,12 @@
             </div>
         </div>
 
-        <!-- Payment Form -->
-        <div class="payment-card">
+
+        <div class="FinalizeyourPayment">
             <h1>Finalize your Payment</h1>
-            <form action="/payment-processing" method="POST">
+            <form id="paymentForm">
                 <label for="name">Cardholder Name</label>
-                <input type="text" id="name" placeholder="Titulaire de la carte" required aria-label="Nom du titulaire" />
+                <input type="text" id="name" placeholder="Titulaire de la carte" required pattern="[A-Za-zÀ-ÿ ]+" maxlength="50" inputmode="text" aria-label="Nom du titulaire" />
 
                 <label for="card">Card Number</label>
                 <input type="text" id="card" placeholder="1234 5678 9012 3456" required pattern="\d{16}" maxlength="16" inputmode="numeric" aria-label="Numéro de carte" />
@@ -50,7 +48,7 @@
                 <div class="card-details">
                     <div>
                         <label for="expiry">Expiration Date</label>
-                        <input type="text" id="expiry" placeholder="MM/YYYY" maxlength="7" required pattern="^(0[1-9]|1[0-2])\/\d{4}$" inputmode="numeric" aria-label="Date d'expiration" />
+                        <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required pattern="^(0[1-9]|1[0-2])\/(2[5-9]|[3-9][0-9])$" inputmode="numeric" aria-label="Date d'expiration" />
                     </div>
                     <div>
                         <label for="cvv">CVV</label>
@@ -58,24 +56,31 @@
                     </div>
                 </div>
 
-                <button type="submit">Confirm Payment</button>
+                <button type="submit">Complete Payment</button>
             </form>
+                  
+            <!-- Confirmation button hidden initially -->
+            <a href="../Feedback/feedback.html" id="confirmPaymentLink" style="display: none;">
+                <button type="button">Confirm Payment</button>
+            </a>
+
             <img src="./asset/logopayment.png" alt="Logo Visa et Mastercard" />
         </div>
+        
     </div>
 
     <script>
         // Retrieve booking details from localStorage
         document.addEventListener("DOMContentLoaded", function() {
             const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
-
+    
             if (bookingDetails) {
                 // Populate the order summary with the selected field details
                 document.getElementById('field-name').textContent = bookingDetails.field;
                 document.getElementById('field-location').textContent = `Location: ${bookingDetails.location}`;
                 document.getElementById('field-price').textContent = bookingDetails.price;
-                document.getElementById('total-price').textContent = bookingDetails.price;  // Assuming total is the same as field price
-
+                document.getElementById('total-price').textContent = bookingDetails.price; 
+    
                 // Populate the date and time
                 document.getElementById('selected-date').textContent = `Date: ${bookingDetails.date}`;
                 document.getElementById('selected-time').textContent = `Time: ${bookingDetails.time}`;
@@ -83,6 +88,18 @@
                 // Handle case where booking details are not found
                 console.log("No booking details found.");
             }
+        });
+
+        // Cacher le bouton "Confirm Payment" par défaut
+        document.getElementById('confirmPaymentLink').style.display = 'none';
+
+        // Ajouter un événement au formulaire
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            // Empêcher la soumission du formulaire pour montrer le bouton "Confirm Payment" (optionnel si on ne soumet pas le formulaire)
+            event.preventDefault();
+
+            // Afficher le bouton "Confirm Payment"
+            document.getElementById('confirmPaymentLink').style.display = 'block';
         });
     </script>
 </body>

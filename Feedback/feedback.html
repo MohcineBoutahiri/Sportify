@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="./feedback.css">
+</head>
+<body>
+
+    <div class="feedback-container">
+        <div class="header">
+            <h3>Transaction Approved</h3>
+        </div>
+        <h1 class="title">We Value Your Feedback</h1>
+
+        <div class="ratings">
+            <div class="rating-option" data-feedback="Unhappy">
+                <span class="emoji">😒</span>
+                <small>Unhappy</small>
+            </div>
+            <div class="rating-option" data-feedback="Neutral">
+                <span class="emoji">😐</span>
+                <small>Neutral</small>
+            </div>
+            <div class="rating-option" data-feedback="Satisfied">
+                <span class="emoji">😃</span>
+                <small>Satisfied</small>
+            </div>
+        </div>
+
+        <button class="submit-btn">Submit Review</button>
+        <div class="thank-you-message"></div>
+
+    </div>
+
+    <div>
+        <a href="../index.html"> 
+            <img class="goToHomePage" src="./asset/image.png" alt="">
+        </a>
+    </div>
+
+    <script>
+        const ratings = document.querySelectorAll('.rating-option');
+        const button = document.querySelector('.submit-btn');
+        const message = document.querySelector('.thank-you-message');
+        let feedback = '';
+
+        ratings.forEach(rating => {
+            rating.addEventListener('click', () => {
+                ratings.forEach(r => r.classList.remove('active'));
+                feedback = rating.dataset.feedback;
+                rating.classList.add('active');
+            });
+        });
+
+        button.addEventListener('click', () => {
+            if (feedback) {
+                message.innerHTML = `<strong>Thank you!</strong><br>Your feedback: <em>${feedback}</em>`;
+            } else {
+                alert('Please select a rating.');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+

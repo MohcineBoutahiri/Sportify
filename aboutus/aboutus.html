@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sportify | About US</title>
+  <link rel="stylesheet" href="./aboutus.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="./aboutus.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <nav class="nav">
+      <div class="nav-logo">
+        <img src="./asset/koora.png" alt="Logo">
+        <p>Sportify</p>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="../index.html" class="link ">Home</a></li>
+          <li><a href="../connexion/connexion.html" class="link">Connexion</a></li>
+          <li><a href="./aboutus.html" class="link active ">About Us</a></li>
+        </ul>
+      </div>
+      <div class="nav-button">
+        <a href="../connexion/connexion.html"><button class="btn white-btn" id="loginBtn">Sign In</button></a>
+      </div>
+      <div class="nav-menu-btn">
+        <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+      </div>
+    </nav>
+
+    <section class="team-section">
+      <h1 class="section-title">Who we are</h1>
+      <p class="section-description">
+        We are a passionate Moroccan team dedicated to bringing sports closer to the community. Our goal is to provide 
+        platforms for booking football fields and connecting sports enthusiasts from around the world.
+
+      </p>
+      <div class="team-cards">
+        <div class="card">
+          <img src="./asset/moi.jpg" alt="Harvey Ruiz">
+          <h2>Elmakhfi Farah </h2>
+          <p class="position">Developer</p>
+          <p> for more details: </p>
+          <a href="https://www.linkedin.com/in/farah-el-makhfi-08b53b31a/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin" style="font-size: 24px; color: #0077b5;"></i>
+          </a>
+        </div>
+        <div class="card">
+          <img src="./asset/mohcine.jpg" alt="Scott Ruiz">
+          <h2>Boutahiri Mohcine </h2>
+          <p class="position">Scrum Master</p>
+          <p> for more details:</p>
+          <a href="http://linkedin.com/in/omar-megzari7" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin" style="font-size: 24px; color: #0077b5;"></i>
+          </a>
+        </div>
+        <div class="card">
+          <img src="./asset/Omar.jpg" alt="Robert Gabriel">
+          <h2>Megzari Omar</h2>
+          <p class="position">Developer</p>
+          <p> for more details:</p>
+            <a href="http://linkedin.com/in/omar-megzari7" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin" style="font-size: 24px; color: #0077b5;"></i>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Sportify</p>
+    </footer>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(to right, rgb(98, 109, 57), #4e6425);
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.main-container {
+    display: flex;
+    gap: 20px; /* Space between sections */
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+}
+
+.fields {
+    width: 65%; /* Adjust width for available space */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-right: 13%;
+}
+#field-list{
+    margin-left: -5%;
+    margin-right: 4%;
+}
+.field-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: auto;
+    width: 100%;
+}
+
+.field-info {
+    flex: 1;
+}
+
+.field-image img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.calendar {
+    flex: 3;
+    display: flex; /* Add flex display */
+    flex-direction: column; /* Stack items vertically */
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* To handle internal alignment */
+    margin-right: 5%;
+}
+
+.calendar header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.current-date {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.icons span {
+    font-size: 20px;
+    cursor: pointer;
+    color: #699129;
+    transition: color 0.3s;
+}
+
+.icons span:hover {
+    color: #4e6425;
+}
+
+.weekdays, .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.time-selection {
+    margin-top: 20px;
+}
+
+.weekdays li, .days li {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.days li {
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.days li:hover {
+    background: #699129;
+    color: white;
+}
+
+.days li.active {
+    background: #699129;
+    color: white;
+}
+
+.days li.past {
+    color: red;
+    text-decoration: line-through;
+}
+
+.days li.past:hover {
+    background: red;
+    color: white;
+}
+
+.days li.inactive {
+    color: #b0b0b0;
+}
+
+#time {
+    padding: 5px;
+    width: 100px;
+}
+
+#selected-time {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.reserved {
+    color: red;
+    font-weight: bold;
+}
+
+#reservation-status {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#calendar-container {
+    display: none;
+    flex: 3;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#payment-container {
+    display: block; /* Ensure block-level behavior */
+    position: absolute; /* Position next to the calendar */
+    right: -120px; /* Adjust to control the horizontal alignment */
+    top: 0;
+    width: 100px; /* Adjust the size */
+    text-align: center;
+    margin-right: 4%;
+}
+
+#go-to-payment {
+    display: inline-block;
+    padding: 164px 20px;
+    background-color: #4e6425;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Add spacing from the top of the calendar */
+    
+}
+
+#go-to-payment:hover {
+    background-color: #699129;
+}
+/* Responsive Design */
+@media (max-width: 700px) {
+    .fields, .calendar {
+        flex: 1 1 100%; /* Take full width on smaller screens */
+    }
+
+    .field-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+    }
+
+    .field-image img {
+        margin-top: 10px;
+        width: 80%; /* Resize image */
+    }
+}

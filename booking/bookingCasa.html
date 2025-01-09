@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Reservation</title>
+    <link rel="stylesheet" href="bookingCasa.css">
+    <script src="bookingCasa.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1 class="nav">Football Field Reservation</h1>
+        <p>Select a field to view the calendar and book a time.</p>
+    </header>
+    <main class="main-container">
+        <!-- Fields Section -->
+        <section class="fields">
+            <h2>Available Fields</h2>
+            <ul id="field-list">
+                <!-- Field 1 -->
+                <li class="field-container maracana">
+                    <div class="field-info">
+                        <h3>Soccer Casablanca Sportif Zenata</h3>
+                        <p>Price: 300 MAD</p>
+                        <p>Location: Route Côtière Zenata</p>
+                    </div>
+                    <div class="field-image">
+                        <img src="./asset1/zenata.jpg" alt="Zenata Field">
+                    </div>
+                </li>
+                <!-- Field 2 -->
+                <li class="field-container fes-city">
+                    <div class="field-info">
+                        <h3>Raja-Oasis Sports Complex</h3>
+                        <p>Price: 200 MAD</p>
+                        <p>Location: Rue Omar Al Khayam</p>
+                    </div>
+                    <div class="field-image">
+                        <img src="./asset1/raja.jpg" alt="Raja-Oasis Field">
+                    </div>
+                </li>
+                <!-- Field 3 -->
+                <li class="field-container fas">
+                    <div class="field-info">
+                        <h3>Raja CA Academy</h3>
+                        <p>Price: 250 MAD</p>
+                        <p>Location: Bouskoura, Morocco</p>
+                    </div>
+                    <div class="field-image">
+                        <img src="./asset1/Raja2.jpeg" alt="Raja Field">
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Calendar Section -->
+        <section class="calendar" id="calendar-container">
+            <header>
+                <p class="current-date">March 2023</p>
+                <div class="icons">
+                    <span id="prev" aria-label="Previous Month">&#10094;</span>
+                    <span id="next" aria-label="Next Month">&#10095;</span>
+                </div>
+            </header>
+            <ul class="weekdays">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+            </ul>
+            <ul class="days"></ul>
+            <div class="time-selection">
+                <label for="time">Select Time: </label>
+                <input type="time" id="time" name="time" min="08:00" max="23:59">
+            </div>
+            <div id="time-display"></div>
+
+            <!-- Go to Payment Button -->
+            <div id="payment-container">
+                <a href="../Payment/payment.html" id="go-to-payment" style="display: none;">Go to Payment</a>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

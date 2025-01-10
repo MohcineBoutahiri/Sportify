@@ -7,8 +7,7 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(to right,rgba(50, 250, 5, 0.773), #05c836, #05c8369b);
-
+    background: linear-gradient(to right,rgb(98, 109, 57), #4e6425);
 
 }
 .nav-img img{
